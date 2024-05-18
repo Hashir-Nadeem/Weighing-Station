@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="WeighingStation.XamlControlLibrary.Header"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeighingStation.XamlControlLibrary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+  <RelativePanel>
+    <StackPanel>
+      <TextBlock Text="{x:Bind HeaderText, Mode=OneWay}" Foreground="White" FontSize="32" FontWeight="Bold" Margin="0,0,0,25" />
+    </StackPanel>
+
+    <Button RelativePanel.AlignRightWithPanel="True" Background="Transparent" Padding="0">
+      <StackPanel Orientation="Horizontal" Spacing="100">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Spacing="10">
+          <Viewbox Stretch="Uniform" Width="17" Height="20">
+            <Path  Data="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" Fill="White" />
+          </Viewbox>
+          <TextBlock Text="Admin1" Foreground="White" FontSize="16" FontWeight="SemiBold" />
+        </StackPanel>
+
+        <FontIcon Glyph="" FontFamily="{ThemeResource SymbolThemeFontFamily}" FontSize="14" FontWeight="Bold" Foreground="White" />
+      </StackPanel>
+      <Button.Flyout>
+        <Flyout>
+          <Flyout.FlyoutPresenterStyle>
+            <Style TargetType="FlyoutPresenter">
+              <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Disabled" />
+              <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+              <Setter Property="Margin" Value="0,10,0,0" />
+              <Setter Property="Padding" Value="0" />
+              <Setter Property="Background" Value="White" />
+              <Setter Property="CornerRadius" Value="5" />
+            </Style>
+          </Flyout.FlyoutPresenterStyle>
+          <StackPanel Padding="25">
+            <TextBlock Text="Hello, Admin1!" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,20" />
+
+            <Button Content="Logout" Click="Button_Click3" Background="#D11313" FontWeight="SemiBold" BorderThickness="1" BorderBrush="#D11313" FontSize="16" Padding="13" CornerRadius="10" Width="170" Foreground="White" />
+          </StackPanel>
+        </Flyout>
+      </Button.Flyout>
+    </Button>
+  </RelativePanel>
+</Page>

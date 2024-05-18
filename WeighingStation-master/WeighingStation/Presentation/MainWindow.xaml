@@ -1,0 +1,148 @@
+﻿<Page
+    x:Class="WeighingStation.Presentation.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeighingStation.Presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:myControlLib="using:WeighingStation.XamlControlLibrary"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+  <Page.DataContext>
+    <local:MainWindowModel />
+  </Page.DataContext>
+
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:/Styles/styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+
+  <Grid Background="#E8ECEF">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="90"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <Border Grid.RowSpan="7" Background="#2a2a2a"/>
+    <Border Grid.Column="1" Grid.RowSpan="7" Background="#161616"/>
+
+    <!--Side Nav-->
+    <myControlLib:SideNav x:Name="SidenavComponent" />
+
+    <StackPanel Grid.Column="1" Margin="40,20,40,20">
+      <myControlLib:Header x:Name="HeaderComponent" />
+
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0">
+          <StackPanel>
+            <TextBlock Text="Products" Foreground="White" FontSize="18" Margin="0,0,0,15" />
+
+            <GridView>
+              <Button Content="CompactBench 2000 XT" Style="{StaticResource YellowSecondaryButton}" />
+              <Button Content="CompactBench 2000 PR" Style="{StaticResource YellowSecondaryButton}" />
+              <Button Content="CompactBench 2000 LT" Style="{StaticResource YellowSecondaryButton}" />
+              <Button Content="CompactBench 2000 PL" Style="{StaticResource YellowSecondaryButton}" />
+            </GridView>
+          </StackPanel>
+
+          <StackPanel Margin="0,0,0,30">
+            <TextBlock Text="Rooms" Foreground="White" FontSize="18" Margin="0,0,0,15" />
+
+            <GridView>
+               <Button Content="SM" Style="{StaticResource YellowSecondaryButton}" />
+ <Button Content="ME" Style="{StaticResource YellowSecondaryButton}" />
+ <Button Content="LG" Style="{StaticResource YellowSecondaryButton}" />
+ <Button Content="XL" Style="{StaticResource YellowSecondaryButton}" />
+ <Button Content="D5" Style="{StaticResource YellowSecondaryButton}" />
+            </GridView>
+          </StackPanel>
+
+          <RelativePanel>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+              <TextBlock Text="Picker:" VerticalAlignment="Center" FontSize="18" Foreground="White" />
+              <TextBox x:Name="PickerTextBox" PlaceholderText="Picker" Width="250" Style="{StaticResource PrimaryTextbox}" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center" RelativePanel.AlignRightWithPanel="True">
+              <TextBlock Text="Boxes:" VerticalAlignment="Center" FontSize="18" Foreground="White" />
+              <StackPanel Orientation="Horizontal" BorderBrush="White" BorderThickness="1" CornerRadius="5">
+                <Button Content="-" Margin="5" Command="{Binding DecrementCommand}" Background="#676767" FontSize="18" Width="40" Foreground="White" />
+                <TextBlock Margin="5" VerticalAlignment="Center" FontSize="18" Foreground="White">
+                                    <Run Text="{Binding Count}" />
+                </TextBlock>
+                <Button Content="+" Margin="5" Command="{Binding IncrementCommand}" Background="#676767" FontSize="18" Width="40" Foreground="White" />
+              </StackPanel>
+            </StackPanel>
+          </RelativePanel>
+
+          <TextBlock Text="// Table Here" Margin="0,20,5,5" VerticalAlignment="Center" Foreground="White" />
+        </StackPanel>
+
+        <Grid Grid.Column="1" Margin="30,0,0,0" Background="#2A2A2A" Padding="20" CornerRadius="15">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+
+          <TextBlock x:Name="InputTextBlock" Height="100" FontSize="72" Grid.ColumnSpan="3" Foreground="#EE2B00" FontWeight="Bold" TextAlignment="Right" />
+
+          <Button Content="7" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+          <Button Content="8" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+          <Button Content="9" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+
+          <Button Content="4" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+          <Button Content="5" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+          <Button Content="6" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+
+          <Button Content="1" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+          <Button Content="2" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+          <Button Content="3" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+
+          <Button Content="0" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Stretch" Margin="5" Click="NumberButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+          <Button Content="." Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" Margin="5" Click="DotButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+          <Button Content="C" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Stretch" Margin="5" Click="BackspaceButton_Click" FontSize="38" FontWeight="Bold" Foreground="White" Background="#676767" CornerRadius="15" />
+
+          <Button Content="SAVE" Grid.Row="5" HorizontalAlignment="Stretch" Margin="5" Grid.ColumnSpan="3" FontSize="18" Background="LightBlue" FontFamily="Arial" FontWeight="Medium" CornerRadius="15" Padding="20" />
+        </Grid>
+      </Grid>
+    </StackPanel>
+  </Grid>
+</Page>

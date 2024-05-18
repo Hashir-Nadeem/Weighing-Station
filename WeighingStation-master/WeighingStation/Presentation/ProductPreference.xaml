@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="WeighingStation.Presentation.ProductPreference"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeighingStation.Presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:myControlLib="using:WeighingStation.XamlControlLibrary"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:/Styles/styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+
+  <Grid Background="#E8ECEF">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="90"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <Border Grid.RowSpan="7" Background="#2A2A2A"/>
+    <Border Grid.Column="1" Grid.RowSpan="7" Background="#161616"/>
+
+    <!--Side Nav-->
+    <myControlLib:SideNav x:Name="SidenavComponent" />
+
+    <StackPanel Grid.Column="1" Margin="40,20,40,20">
+      <myControlLib:Header x:Name="HeaderComponent" HeaderText="Products" />
+
+      <StackPanel Background="#2A2A2A" Padding="25" CornerRadius="15">
+        <TextBlock Text="Select Product Preferences" FontSize="24" Foreground="White" FontWeight="Bold" Margin="0,0,0,20" />
+
+        <GridView>
+          <GridView.ItemContainerStyle>
+            <Style TargetType="GridViewItem">
+              <Setter Property="Margin" Value="0,0,10,15" />
+            </Style>
+          </GridView.ItemContainerStyle>
+
+          <Button Content="CompactBench 2000 XT" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 PR" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 LT" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 PL" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 HD" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 MI" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 IN" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 SM" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 EC" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="CompactBench 2000 PR" Style="{StaticResource YellowSecondaryButton}" />
+
+        </GridView>
+
+        <RelativePanel>
+          <Button Content="SAVE" Background="LightBlue" FontWeight="SemiBold" BorderThickness="1" BorderBrush="LightBlue" FontSize="16" Padding="13" CornerRadius="10" RelativePanel.AlignRightWithPanel="True" Width="170" />
+        </RelativePanel>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</Page>

@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="WeighingStation.Presentation.RoomPreference"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeighingStation.Presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:myControlLib="using:WeighingStation.XamlControlLibrary"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:/Styles/styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+
+  <Grid Background="#E8ECEF">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="90"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <Border Grid.RowSpan="7" Background="#2a2a2a"/>
+    <Border Grid.Column="1" Grid.RowSpan="7" Background="#161616"/>
+
+    <!--Side Nav-->
+    <myControlLib:SideNav x:Name="SidenavComponent" />
+
+    <StackPanel Grid.Column="1" Margin="40,20,40,20">
+      <myControlLib:Header x:Name="HeaderComponent" HeaderText="Rooms" />
+
+      <StackPanel Background="#2A2A2A" Padding="25" CornerRadius="15">
+        <TextBlock Text="Select Room Preferences" FontSize="24" Foreground="White" FontWeight="Bold" Margin="0,0,0,20" />
+
+        <GridView>
+          <GridView.ItemContainerStyle>
+            <Style TargetType="GridViewItem">
+              <Setter Property="Margin" Value="0,0,10,15" />
+            </Style>
+          </GridView.ItemContainerStyle>
+
+          <Button Content="SM" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="ME" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="LG" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="XL" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="D5" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="SU" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="ES" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="PH" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="PS" Style="{StaticResource YellowSecondaryButton}" />
+          <Button Content="VI" Style="{StaticResource YellowSecondaryButton}" />
+
+        </GridView>
+
+        <RelativePanel>
+          <Button Content="SAVE" Background="LightBlue" FontWeight="SemiBold" BorderThickness="1" BorderBrush="LightBlue" FontSize="16" Padding="13" CornerRadius="10" RelativePanel.AlignRightWithPanel="True" Width="170" />
+        </RelativePanel>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</Page>

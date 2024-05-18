@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="WeighingStation.Presentation.SignUpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WeighingStation.Presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#161616">
+
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:/Styles/styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+
+  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
+      <TextBlock Text="Create Account" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Helvetica" />
+    </StackPanel>
+
+    <TextBlock Text="Name" VerticalAlignment="Center" Foreground="White" FontSize="18" Margin="0,0,0,10" />
+    <TextBox x:Name="CreateNameTextBox" PlaceholderText="Name" Margin="0,0,0,20" Style="{StaticResource PrimaryTextbox}" />
+
+    <TextBlock Text="Password" VerticalAlignment="Center" Foreground="White" FontSize="18" Margin="0,0,0,10" />
+    <PasswordBox x:Name="CreatePasswordBox" PlaceholderText="Password" Margin="0,0,0,20" Style="{StaticResource PrimaryPasswordbox}" />
+
+    <TextBlock Text="Confirm Password" VerticalAlignment="Center" Foreground="White" FontSize="18" Margin="0,0,0,10" />
+    <PasswordBox x:Name="CreateConfirmPasswordBox" PlaceholderText="Password" Margin="0,0,0,30" Style="{StaticResource PrimaryPasswordbox}" />
+
+    <Button Content="Create Account" HorizontalAlignment="Stretch" Background="LightBlue" FontSize="16" Padding="10" CornerRadius="10" Margin="0,0,0,10" />
+    <Button Content="Back" HorizontalAlignment="Stretch" Click="CreateButton_Back" Foreground="White" Background="Transparent" FontSize="16" Padding="10" CornerRadius="10" />
+  </StackPanel>
+</Page>

@@ -1,0 +1,157 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style x:Key="YellowSecondaryButton" TargetType="Button">
+    <Setter Property="Background" Value="Blue" />
+    <!-- Changed from Transparent to Yellow -->
+    <Setter Property="BorderThickness" Value="2" />
+    <!-- Changed border thickness -->
+    <Setter Property="BorderBrush" Value="Blue" />
+    <!-- Changed to a different shade of orange -->
+    <Setter Property="Foreground" Value="Black" />
+    <!-- Changed from White to Black -->
+    <Setter Property="FontSize" Value="16" />
+    <!-- Increased font size -->
+    <Setter Property="Padding" Value="20,15" />
+    <!-- Increased padding -->
+    <Setter Property="CornerRadius" Value="25" />
+    <!-- Increased corner radius -->
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal" />
+                <VisualState x:Name="PointerOver">
+                  <Storyboard>
+                    <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FF8C00" Duration="0:0:0.1" />
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}">
+              <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Padding="{TemplateBinding Padding}" />
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="GridViewItem">
+    <Setter Property="Margin" Value="5,5,15,20" />
+    <!-- Changed margins -->
+  </Style>
+
+  <Style x:Key="PrimaryTextbox" TargetType="TextBox">
+    <Setter Property="Background" Value="#282828" />
+    <!-- Changed to a dark grey -->
+    <Setter Property="BorderBrush" Value="#FFFFFF" />
+    <!-- Kept as White -->
+    <Setter Property="FontSize" Value="20" />
+    <!-- Increased font size -->
+    <Setter Property="Padding" Value="20,15" />
+    <!-- Increased padding -->
+    <Setter Property="CornerRadius" Value="10" />
+    <!-- Increased corner radius -->
+    <Setter Property="Foreground" Value="#FFFFFF" />
+    <!-- Kept as White -->
+    <Setter Property="PlaceholderForeground" Value="#D3D3D3" />
+    <!-- Changed placeholder text color to light grey -->
+    <Setter Property="PlaceholderText" Value="Enter text..." />
+    <!-- Changed placeholder text value -->
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="TextBox">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal" />
+                <VisualState x:Name="PointerOver">
+                  <Storyboard>
+                    <ColorAnimation Storyboard.TargetName="BorderElement" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FFD700" Duration="0:0:0.1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Focused">
+                  <Storyboard>
+                    <ColorAnimation Storyboard.TargetName="BorderElement" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FFD700" Duration="0:0:0.1" />
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="BorderElement" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="{TemplateBinding CornerRadius}">
+              <ScrollViewer x:Name="ContentElement" Margin="{TemplateBinding Padding}" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" IsTabStop="False" />
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="PrimaryPasswordbox" TargetType="PasswordBox">
+    <Setter Property="Background" Value="#282828" />
+    <!-- Changed to a dark grey -->
+    <Setter Property="FontSize" Value="20" />
+    <!-- Increased font size -->
+    <Setter Property="Padding" Value="15" />
+    <!-- Increased padding -->
+    <Setter Property="BorderThickness" Value="2" />
+    <!-- Increased border thickness -->
+    <Setter Property="BorderBrush" Value="#FFFFFF" />
+    <!-- Kept as White -->
+    <Setter Property="CornerRadius" Value="10" />
+    <!-- Increased corner radius -->
+    <Setter Property="Foreground" Value="#FFFFFF" />
+    <!-- Kept as White -->
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="PasswordBox">
+          <Grid>
+            <VisualStateManager.VisualStateGroups>
+              <VisualStateGroup x:Name="CommonStates">
+                <VisualState x:Name="Normal" />
+                <VisualState x:Name="PointerOver">
+                  <Storyboard>
+                    <ColorAnimation Storyboard.TargetName="BorderElement"
+                                  Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                  To="#FFD700" Duration="0:0:0.1" />
+                  </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Focused">
+                  <Storyboard>
+                    <ColorAnimation Storyboard.TargetName="BorderElement"
+                                  Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                  To="#FFD700" Duration="0:0:0.1" />
+                  </Storyboard>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="BorderElement" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}">
+              <ScrollViewer x:Name="ContentElement" Margin="{TemplateBinding Padding}" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" IsTabStop="False">
+                <ScrollViewer.Template>
+                  <ControlTemplate TargetType="ScrollViewer">
+                    <Grid>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                      </Grid.RowDefinitions>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                      </Grid.ColumnDefinitions>
+                      <Rectangle x:Name="HorizontalScrollBar" Grid.Row="1" Visibility="Collapsed" />
+                      <Rectangle x:Name="VerticalScrollBar" Grid.Column="1" Visibility="Collapsed" />
+                      <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" />
+                    </Grid>
+                  </ControlTemplate>
+                </ScrollViewer.Template>
+              </ScrollViewer>
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>

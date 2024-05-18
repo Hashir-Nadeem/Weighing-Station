@@ -1,0 +1,30 @@
+﻿<Page x:Class="WeighingStation.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:WeighingStation"
+      Background="#161616">
+  
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ms-appx:/Styles/styles.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+
+  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
+      <TextBlock Text="Weighing Station" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="32" FontFamily="Helvetica" />
+    </StackPanel>
+
+    <TextBlock Text="Name" VerticalAlignment="Center" Foreground="White" FontSize="18" Margin="0,0,0,10" />
+    <TextBox x:Name="NameTextBox" PlaceholderText="Name" Margin="0,0,0,20" Style="{StaticResource PrimaryTextbox}" />
+
+    <TextBlock Text="Password" VerticalAlignment="Center" Foreground="White" FontSize="18" Margin="0,0,0,10" />
+    <PasswordBox x:Name="PasswordBox" PlaceholderText="Password" Margin="0,0,0,30" Style="{StaticResource PrimaryPasswordbox}" />
+
+    <Button Content="Sign in" HorizontalAlignment="Stretch" Click="MainWindow_Button" Background="LightBlue" FontSize="16" Padding="10" CornerRadius="10" Margin="0,0,0,10" />
+    <Button Content="Create Account" HorizontalAlignment="Stretch" Click="CreateAccount_Button" Foreground="White" Background="Transparent" FontSize="16" Padding="10" CornerRadius="10" />
+  </StackPanel>
+  
+</Page>
